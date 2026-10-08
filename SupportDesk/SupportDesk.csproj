@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EACCEFA5-9B3D-47A8-99A7-AFDEC4FD051F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SupportDesk</RootNamespace>
+    <AssemblyName>SupportDesk</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telegram.Bot, Version=16.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telegram.Bot.16.0.0\lib\net45\Telegram.Bot.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dll\ExpUIButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dll\ExpUIButtonIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dll\ExpUICheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dll\ExpUIToggleControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dll\textBoxUI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="forms\AboutLicensesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AboutLicensesForm.Designer.cs">
+      <DependentUpon>AboutLicensesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AddContactsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddContactsForm.Designer.cs">
+      <DependentUpon>AddContactsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AddInvForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddInvForm.Designer.cs">
+      <DependentUpon>AddInvForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AddLicensesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddLicensesForm.Designer.cs">
+      <DependentUpon>AddLicensesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AddPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddPasswordForm.Designer.cs">
+      <DependentUpon>AddPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AddPrinterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddPrinterForm.Designer.cs">
+      <DependentUpon>AddPrinterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CartridgesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CartridgesForm.Designer.cs">
+      <DependentUpon>CartridgesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ChangePassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ChangePassForm.Designer.cs">
+      <DependentUpon>ChangePassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CloseRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CloseRequestForm.Designer.cs">
+      <DependentUpon>CloseRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ContactsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ContactsForm.Designer.cs">
+      <DependentUpon>ContactsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CreateNewTicketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CreateNewTicketForm.Designer.cs">
+      <DependentUpon>CreateNewTicketForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DataSpecificUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DataSpecificUserForm.Designer.cs">
+      <DependentUpon>DataSpecificUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DataTicketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DataTicketForm.Designer.cs">
+      <DependentUpon>DataTicketForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DirectoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DirectoryForm.Designer.cs">
+      <DependentUpon>DirectoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\InventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\InventoryForm.Designer.cs">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\LicensesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\LicensesForm.Designer.cs">
+      <DependentUpon>LicensesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MainAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MainAdminForm.Designer.cs">
+      <DependentUpon>MainAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MainFormAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MainFormAll.Designer.cs">
+      <DependentUpon>MainFormAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MainUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MainUserForm.Designer.cs">
+      <DependentUpon>MainUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MainWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MainWorkerForm.Designer.cs">
+      <DependentUpon>MainWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MessageBoxForm.Designer.cs">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MonthCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MonthCalendarForm.Designer.cs">
+      <DependentUpon>MonthCalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\PasswordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\PasswordsForm.Designer.cs">
+      <DependentUpon>PasswordsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\PreLoaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\PreLoaderForm.Designer.cs">
+      <DependentUpon>PreLoaderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ResultRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ResultRequestForm.Designer.cs">
+      <DependentUpon>ResultRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RootCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RootCheckForm.Designer.cs">
+      <DependentUpon>RootCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SendBagsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SendBagsForm.Designer.cs">
+      <DependentUpon>SendBagsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\TelegramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\TelegramForm.Designer.cs">
+      <DependentUpon>TelegramForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\UserDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\UserDataForm.Designer.cs">
+      <DependentUpon>UserDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="forms\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="forms\AboutLicensesForm.resx">
+      <DependentUpon>AboutLicensesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AddContactsForm.resx">
+      <DependentUpon>AddContactsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AddInvForm.resx">
+      <DependentUpon>AddInvForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AddLicensesForm.resx">
+      <DependentUpon>AddLicensesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AddPasswordForm.resx">
+      <DependentUpon>AddPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AddPrinterForm.resx">
+      <DependentUpon>AddPrinterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CartridgesForm.resx">
+      <DependentUpon>CartridgesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ChangePassForm.resx">
+      <DependentUpon>ChangePassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CloseRequestForm.resx">
+      <DependentUpon>CloseRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ContactsForm.resx">
+      <DependentUpon>ContactsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CreateNewTicketForm.resx">
+      <DependentUpon>CreateNewTicketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DataSpecificUserForm.resx">
+      <DependentUpon>DataSpecificUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DataTicketForm.resx">
+      <DependentUpon>DataTicketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DirectoryForm.resx">
+      <DependentUpon>DirectoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\InventoryForm.resx">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\LicensesForm.resx">
+      <DependentUpon>LicensesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MainAdminForm.resx">
+      <DependentUpon>MainAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MainFormAll.resx">
+      <DependentUpon>MainFormAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MainUserForm.resx">
+      <DependentUpon>MainUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MainWorkerForm.resx">
+      <DependentUpon>MainWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MessageBoxForm.resx">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MonthCalendarForm.resx">
+      <DependentUpon>MonthCalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\PasswordsForm.resx">
+      <DependentUpon>PasswordsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\PreLoaderForm.resx">
+      <DependentUpon>PreLoaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ResultRequestForm.resx">
+      <DependentUpon>ResultRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RootCheckForm.resx">
+      <DependentUpon>RootCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SendBagsForm.resx">
+      <DependentUpon>SendBagsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\TelegramForm.resx">
+      <DependentUpon>TelegramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\UserDataForm.resx">
+      <DependentUpon>UserDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+</Project>
